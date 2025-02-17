@@ -1,0 +1,188 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E8B989;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 2px solid #333;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+    padding: 5px;
+}
+
+/* Site Title */
+.site-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 15px;
+    background: #4A73B9;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background: #3b5fa1;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/* This ensures the dropdown menu only appears on small screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #4A73B9;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Verification Section */
+.verification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    text-align: center;
+    width: 100%;
+    padding-top: 60px;
+}
+
+/* Checkmark Container */
+.checkmark-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    animation: reveal 2s forwards;
+}
+
+.checkmark {
+    width: 50%;
+    height: 50%;
+    animation: checkmark-animation 2s forwards;
+}
+
+.checkmark circle {
+    fill: none;
+    stroke: #dcdcdc;
+    stroke-width: 5;
+}
+
+.checkmark .check {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: stroke 2s forwards;
+}
+
+/* Confirmation Message */
+.confirmation-message {
+    font-size: 20px;
+    color: #4CAF50;
+    margin-top: 20px;
+    opacity: 0;
+    animation: message 1.5s 2s forwards;
+    font-weight: bold;
+}
+
+/* Keyframes */
+@keyframes checkmark-animation {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes stroke {
+    0% {
+        stroke-dashoffset: 80;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes message {
+    0% {
+        opacity: 0;
+        bottom: -50px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 50px;
+    }
+}

@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E8B989;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 2px solid #333;
+}
+
+/* Logo */
+.logo img {
+    height: 100px; 
+    width: auto;
+    display: block;
+    padding: 5px;
+}
+
+
+.site-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/* Navigation Bar */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 15px;
+    background: #4A73B9;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links li:hover {
+    background: #3b5fa1;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #4A73B9;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+/* Booking Layout */
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px; 
+}
+
+.booking-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Calendar */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#calendar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.calendar-day {
+    padding: 12px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.calendar-day.selected {
+    background: #4A73B9;
+    color: white;
+}
+
+/* Time Slots (Always visible) */
+#timeslots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.timeslot {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.timeslot.selected {
+    background: #4A73B9;
+    color: white;
+}
+
+/* Client Form */
+#clientForm input {
+    width: calc(100% - 20px);
+    max-width: 350px;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: #4A73B9;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Hover Effect for Buttons */
+button:not(:disabled):hover {
+    background: #3b5fa1;
+}

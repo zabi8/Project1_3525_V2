@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Finder - Book Online</title>
+    <link rel="stylesheet" href="book.css">
+    <script defer src="book.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="home.html" class="logo">
+            <img src="logo.png" alt="Therapy Finder Logo">
+        </a>
+        <div class="site-title">THERAPY FINDER</div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="book.html">Book Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="booking-container">
+        <div class="booking-box">
+            <div id="step1">
+                <h2 id="selectedDateHeader">Book A Free Online Zoom Consultation Date </h2>
+                <div class="calendar-header">
+                    <button id="prevWeek">‹</button>
+                    <span id="currentWeek">SELECT A CONSULTATION DATE</span>
+                    <button id="nextWeek">›</button>
+                </div>
+                <div id="calendar"></div>
+                <div id="timeslots"></div>
+            </div>
+
+            <div id="step2">
+                <h3>Enter Details</h3>
+                <form id="clientForm">
+                    <input type="text" id="name" placeholder="Name*" required>
+                    <input type="text" id="phone" placeholder="Phone Number*" required>
+                    <input type="email" id="email" placeholder="Email*" required>
+                    <button id="confirmBooking" disabled>Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
